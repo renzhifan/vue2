@@ -18,8 +18,8 @@
 
     <h2>Incompleted Tasks</h2>
     <ul>
-        <li  v-for="(task,index) in incompletedTasks">
-            {{task.description}}<button  @click="edit(index)" v-if="!task.completed">{{task.completed}}</button>
+        <li  v-for="task in incompletedTasks">
+            {{task.description}}<button  @click="editTask(task)" v-if="!task.completed">completed</button>
 
         </li>
     </ul>
@@ -45,8 +45,8 @@
             }
         },
         methods: {
-            edit(index) {
-                console.log(this.tasks.filter(task => ! task.completed))
+            editTask(editTask) {
+                editTask.completed=!editTask.completed
             }
         }
     });
