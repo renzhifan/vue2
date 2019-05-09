@@ -6,6 +6,19 @@
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script>
 </head>
 <body>
+<div id="root">
+    <input type="text" id="input" v-model="message">
 
+    <p>the value of the input is {{ message }}.</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            message: "Hello world!"
+        }
+    });
+</script>
 </body>
 </html>
